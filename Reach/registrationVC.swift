@@ -78,10 +78,10 @@ class registrationVC: FormViewController {
     }
 
     func DoneTapped(){
-        let email: EmailRow? = form.rowByTag(emailTag)
+        let email: EmailRow? = form.rowBy(tag: emailTag)
         let value = email?.value
       
-        let password: PasswordRow? = form.rowByTag(passwordTag)
+        let password: PasswordRow? = form.rowBy(tag: passwordTag)
         let value2 = password?.value
       
         FIRAuth.auth()?.createUser(withEmail: value!, password: value2!, completion: { (user, error) in
@@ -91,6 +91,7 @@ class registrationVC: FormViewController {
       })
 
     }
+  
   
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

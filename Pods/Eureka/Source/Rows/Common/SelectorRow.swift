@@ -1,14 +1,30 @@
-//
 //  SelectorRow.swift
-//  Eureka
+//  Eureka ( https://github.com/xmartlabs/Eureka )
 //
-//  Created by Martin Barreto on 2/23/16.
-//  Copyright © 2016 Xmartlabs. All rights reserved.
+//  Copyright (c) 2016 Xmartlabs SRL ( http://xmartlabs.com )
 //
+//
+// Permission is hereby granted, free of charge, to any person obtaining a copy
+// of this software and associated documentation files (the "Software"), to deal
+// in the Software without restriction, including without limitation the rights
+// to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+// copies of the Software, and to permit persons to whom the Software is
+// furnished to do so, subject to the following conditions:
+//
+// The above copyright notice and this permission notice shall be included in
+// all copies or substantial portions of the Software.
+//
+// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+// IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+// FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+// AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+// LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+// THE SOFTWARE.
 
 import Foundation
 
-public class PushSelectorCell<T: Equatable> : Cell<T>, CellType {
+open class PushSelectorCell<T: Equatable> : Cell<T>, CellType {
     
     required public init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -18,7 +34,7 @@ public class PushSelectorCell<T: Equatable> : Cell<T>, CellType {
         fatalError("init(coder:) has not been implemented")
     }
     
-    public override func update() {
+    open override func update() {
         super.update()
         accessoryType = .disclosureIndicator
         editingAccessoryType = accessoryType
@@ -30,10 +46,10 @@ public class PushSelectorCell<T: Equatable> : Cell<T>, CellType {
 open class SelectorRow<Cell: CellType, VCType: TypedRowControllerType>: OptionsRow<Cell>, PresenterRowType where Cell: BaseCell, VCType: UIViewController, VCType.RowValue == Cell.Value {
     
     /// Defines how the view controller will be presented, pushed, etc.
-    public var presentationMode: PresentationMode<VCType>?
+    open var presentationMode: PresentationMode<VCType>?
     
     /// Will be called before the presentation occurs.
-    public var onPresentCallback : ((FormViewController, VCType)->())?
+    open var onPresentCallback : ((FormViewController, VCType)->())?
     
     required public init(tag: String?) {
         super.init(tag: tag)
@@ -42,28 +58,28 @@ open class SelectorRow<Cell: CellType, VCType: TypedRowControllerType>: OptionsR
     /**
      Extends `didSelect` method
      */
-    public override func customDidSelect() {
+    open override func customDidSelect() {
         super.customDidSelect()
         guard let presentationMode = presentationMode, !isDisabled else { return }
-        if let controller = presentationMode.createController(){
+        if let controller = presentationMode.makeController(){
             controller.row = self
             controller.title = selectorTitle ?? controller.title
             onPresentCallback?(cell.formViewController()!, controller)
-            presentationMode.presentViewController(controller, row: self, presentingViewController: self.cell.formViewController()!)
+            presentationMode.present(controller, row: self, presentingController: self.cell.formViewController()!)
         }
         else{
-            presentationMode.presentViewController(nil, row: self, presentingViewController: self.cell.formViewController()!)
+            presentationMode.present(nil, row: self, presentingController: self.cell.formViewController()!)
         }
     }
     
     /**
      Prepares the pushed row setting its title and completion callback.
      */
-    public override func prepareForSegue(_ segue: UIStoryboardSegue) {
-        super.prepareForSegue(segue)
+    open override func prepare(for segue: UIStoryboardSegue) {
+        super.prepare(for: segue)
         guard let rowVC = segue.destination as? VCType else { return }
         rowVC.title = selectorTitle ?? rowVC.title
-        rowVC.completionCallback = presentationMode?.completionHandler ?? rowVC.completionCallback
+        rowVC.onDismissCallback = presentationMode?.onDismissCallback ?? rowVC.onDismissCallback
         onPresentCallback?(cell.formViewController()!, rowVC)
         rowVC.row = self
     }

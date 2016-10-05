@@ -4,9 +4,10 @@
 target 'Reach' do
   
   use_frameworks!
-  pod 'Eureka', :git => 'https://github.com/xmartlabs/Eureka.git', :branch => 'Swift3'
+  pod 'Eureka', '~> 2.0.0-beta.1'
   pod 'Firebase', '~> 3.6'
   pod 'FirebaseAuth', '~> 3.0'
   pod 'IQKeyboardManagerSwift', '~> 4.0'
+  pod 'FBSDKLoginKit'
 
 end

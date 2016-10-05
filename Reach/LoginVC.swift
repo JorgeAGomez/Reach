@@ -8,6 +8,7 @@
 
 import UIKit
 import FirebaseAuth
+//import FBSDKLoginKit
 
 
 class LoginVC : UIViewController {
@@ -25,7 +26,7 @@ class LoginVC : UIViewController {
     self.navigationController?.isNavigationBarHidden = true
     loginButton.layer.borderColor = reachColor
     self.hideKeyboardWhenTappedAround()
-    //signUpButton.layer.borderColor = reachColor
+    
   
   }
 

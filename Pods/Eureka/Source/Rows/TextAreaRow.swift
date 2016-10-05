@@ -1,10 +1,26 @@
-//
 //  AlertRow.swift
-//  Eureka
+//  Eureka ( https://github.com/xmartlabs/Eureka )
 //
-//  Created by Martin Barreto on 2/23/16.
-//  Copyright © 2016 Xmartlabs. All rights reserved.
+//  Copyright (c) 2016 Xmartlabs SRL ( http://xmartlabs.com )
 //
+//
+// Permission is hereby granted, free of charge, to any person obtaining a copy
+// of this software and associated documentation files (the "Software"), to deal
+// in the Software without restriction, including without limitation the rights
+// to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+// copies of the Software, and to permit persons to whom the Software is
+// furnished to do so, subject to the following conditions:
+//
+// The above copyright notice and this permission notice shall be included in
+// all copies or substantial portions of the Software.
+//
+// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+// IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+// FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+// AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+// LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+// THE SOFTWARE.
 
 import Foundation
 
@@ -32,7 +48,7 @@ extension AreaCell {
     }
 }
 
-public class _TextAreaCell<T> : Cell<T>, UITextViewDelegate, AreaCell where T: Equatable, T: InputTypeInitiable {
+open class _TextAreaCell<T> : Cell<T>, UITextViewDelegate, AreaCell where T: Equatable, T: InputTypeInitiable {
     
     required public init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -42,7 +58,7 @@ public class _TextAreaCell<T> : Cell<T>, UITextViewDelegate, AreaCell where T: E
         fatalError("init(coder:) has not been implemented")
     }
     
-    public lazy var placeholderLabel : UILabel = {
+    open lazy var placeholderLabel : UILabel = {
         let v = UILabel()
         v.translatesAutoresizingMaskIntoConstraints = false
         v.numberOfLines = 0
@@ -50,15 +66,15 @@ public class _TextAreaCell<T> : Cell<T>, UITextViewDelegate, AreaCell where T: E
         return v
     }()
     
-    public lazy var textView : UITextView = {
+    open lazy var textView : UITextView = {
         let v = UITextView()
         v.translatesAutoresizingMaskIntoConstraints = false
         return v
     }()
     
-    public var dynamicConstraints = [NSLayoutConstraint]()
+    open var dynamicConstraints = [NSLayoutConstraint]()
     
-    public override func setup() {
+    open override func setup() {
         super.setup()
         let textAreaRow = row as! TextAreaConformance
         switch textAreaRow.textAreaHeight {
@@ -70,7 +86,7 @@ public class _TextAreaCell<T> : Cell<T>, UITextViewDelegate, AreaCell where T: E
         }
         textView.keyboardType = .default
         textView.delegate = self
-        textView.font = .preferredFont(forTextStyle: UIFontTextStyle.body)
+        textView.font = .preferredFont(forTextStyle: .body)
         textView.textContainer.lineFragmentPadding = 0
         textView.textContainerInset = UIEdgeInsets.zero
         placeholderLabel.font = textView.font
@@ -88,7 +104,7 @@ public class _TextAreaCell<T> : Cell<T>, UITextViewDelegate, AreaCell where T: E
         
     }
     
-    public override func update() {
+    open override func update() {
         super.update()
         textLabel?.text = nil
         detailTextLabel?.text = nil
@@ -100,15 +116,15 @@ public class _TextAreaCell<T> : Cell<T>, UITextViewDelegate, AreaCell where T: E
         placeholderLabel.isHidden = textView.text.characters.count != 0
     }
     
-    public override func cellCanBecomeFirstResponder() -> Bool {
+    open override func cellCanBecomeFirstResponder() -> Bool {
         return !row.isDisabled && textView.canBecomeFirstResponder
     }
     
-    public override func cellBecomeFirstResponder(_ fromDiretion: Direction) -> Bool {
+    open override func cellBecomeFirstResponder(withDirection: Direction) -> Bool {
         return textView.becomeFirstResponder()
     }
     
-    public override func cellResignFirstResponder() -> Bool {
+    open override func cellResignFirstResponder() -> Bool {
         return textView.resignFirstResponder()
     }
     
@@ -126,7 +142,7 @@ public class _TextAreaCell<T> : Cell<T>, UITextViewDelegate, AreaCell where T: E
     private func displayValue(useFormatter: Bool) -> String? {
         guard let v = row.value else { return nil }
         if let formatter = (row as? FormatterConformance)?.formatter, useFormatter {
-            return textView.isFirstResponder ? formatter.editingString(for: v as AnyObject) : formatter.string(for: v as AnyObject)
+            return textView.isFirstResponder ? formatter.editingString(for: v) : formatter.string(for: v)
         }
         return String(describing: v)
     }
@@ -134,8 +150,8 @@ public class _TextAreaCell<T> : Cell<T>, UITextViewDelegate, AreaCell where T: E
     //MARK: TextFieldDelegate
     
     
-    public func textViewDidBeginEditing(_ textView: UITextView) {
-        formViewController()?.beginEditing(self)
+    open func textViewDidBeginEditing(_ textView: UITextView) {
+        formViewController()?.beginEditing(of: self)
         formViewController()?.textInputDidBeginEditing(textView, cell: self)
         if let textAreaConformance = (row as? TextAreaConformance), let _ = textAreaConformance.formatter, textAreaConformance.useFormatterOnDidBeginEditing ?? textAreaConformance.useFormatterDuringInput {
             textView.text = self.displayValue(useFormatter: true)
@@ -145,14 +161,14 @@ public class _TextAreaCell<T> : Cell<T>, UITextViewDelegate, AreaCell where T: E
         }
     }
     
-    public func textViewDidEndEditing(_ textView: UITextView) {
-        formViewController()?.endEditing(self)
+    open func textViewDidEndEditing(_ textView: UITextView) {
+        formViewController()?.endEditing(of: self)
         formViewController()?.textInputDidEndEditing(textView, cell: self)
         textViewDidChange(textView)
         textView.text = displayValue(useFormatter: (row as? FormatterConformance)?.formatter != nil)
     }
     
-    public func textViewDidChange(_ textView: UITextView) {
+    open func textViewDidChange(_ textView: UITextView) {
         
         if let textAreaConformance = row as? TextAreaConformance, case .dynamic = textAreaConformance.textAreaHeight, let tableView = formViewController()?.tableView {
             let currentOffset = tableView.contentOffset
@@ -193,24 +209,24 @@ public class _TextAreaCell<T> : Cell<T>, UITextViewDelegate, AreaCell where T: E
         }
     }
     
-    public func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
+    open func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
         return formViewController()?.textInput(textView, shouldChangeCharactersInRange: range, replacementString: text, cell: self) ?? true
     }
     
-    public func textViewShouldBeginEditing(_ textView: UITextView) -> Bool {
+    open func textViewShouldBeginEditing(_ textView: UITextView) -> Bool {
         return formViewController()?.textInputShouldBeginEditing(textView, cell: self) ?? true
     }
     
-    public func textViewShouldEndEditing(_ textView: UITextView) -> Bool {
+    open func textViewShouldEndEditing(_ textView: UITextView) -> Bool {
         return formViewController()?.textInputShouldEndEditing(textView, cell: self) ?? true
     }
     
-    public override func updateConstraints(){
+    open override func updateConstraints(){
         customConstraints()
         super.updateConstraints()
     }
     
-    public func customConstraints() {
+    open func customConstraints() {
         contentView.removeConstraints(dynamicConstraints)
         dynamicConstraints = []
         var views : [String: AnyObject] = ["textView": textView, "label": placeholderLabel]
@@ -235,7 +251,7 @@ public class _TextAreaCell<T> : Cell<T>, UITextViewDelegate, AreaCell where T: E
     
 }
 
-public class TextAreaCell : _TextAreaCell<String>, CellType {
+open class TextAreaCell : _TextAreaCell<String>, CellType {
     
     required public init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -246,17 +262,17 @@ public class TextAreaCell : _TextAreaCell<String>, CellType {
     }
 }
 
-public class AreaRow<Cell: CellType>: FormatteableRow<Cell>, TextAreaConformance where Cell: BaseCell, Cell: AreaCell {
+open class AreaRow<Cell: CellType>: FormatteableRow<Cell>, TextAreaConformance where Cell: BaseCell, Cell: AreaCell {
     
-    public var placeholder : String?
-    public var textAreaHeight = TextAreaHeight.fixed(cellHeight: 110)
+    open var placeholder : String?
+    open var textAreaHeight = TextAreaHeight.fixed(cellHeight: 110)
     
     public required init(tag: String?) {
         super.init(tag: tag)
     }
 }
 
-public class _TextAreaRow: AreaRow<TextAreaCell> {
+open class _TextAreaRow: AreaRow<TextAreaCell> {
     required public init(tag: String?) {
         super.init(tag: tag)
     }
