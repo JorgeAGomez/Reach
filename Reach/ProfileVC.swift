@@ -17,19 +17,24 @@ class ProfileVC: UIViewController {
   
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.hideKeyboardWhenTappedAround()
       
-        //Adding title and rightButton to navigationBar.
-        self.tabBarController?.title = "Profile"
-        let rightButton = UIBarButtonItem(title: "Logout", style: .plain, target: self, action: #selector(logoutButton))
-        rightButton.tintColor = UIColor(displayP3Red: 211/251, green: 81/251, blue: 67/251, alpha: 1.0)
-        self.tabBarController?.navigationItem.rightBarButtonItem = rightButton
       
         //Modifies the radius of the square to make the profile picture a circle.
         profilePicture.layer.cornerRadius = 75
         profilePicture.layer.borderWidth = 3
         profilePicture.layer.borderColor = UIColor(displayP3Red: 211/251, green: 81/251, blue: 66/251, alpha: 1.0).cgColor
         profilePicture.clipsToBounds = true
-      
+    }
+  
+    override func viewDidAppear(_ animated: Bool) {
+      //Adding title and rightButton to navigationBar.
+      let rightButton = UIBarButtonItem(title: "Logout", style: .plain, target: self, action: #selector(logoutButton))
+      rightButton.tintColor = UIColor(displayP3Red: 211/251, green: 81/251, blue: 67/251, alpha: 1.0)
+        self.tabBarController?.navigationItem.rightBarButtonItem = rightButton
+
+      self.tabBarController?.title = "Profile"
+      self.tabBarController?.navigationItem.rightBarButtonItem = rightButton
     }
   
     func logoutButton(){
@@ -38,9 +43,15 @@ class ProfileVC: UIViewController {
         UIApplication.shared.keyWindow?.rootViewController = loginViewController
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+}
+
+extension UIViewController {
+    func hideKeyboardWhenTappedAround() {
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(UIViewController.dismissKeyboard))
+        view.addGestureRecognizer(tap)
     }
 
+    func dismissKeyboard() {
+        view.endEditing(true)
+    }
 }

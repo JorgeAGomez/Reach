@@ -14,17 +14,16 @@ class NotificationsVC: UIViewController, UITableViewDelegate, UITableViewDataSou
   
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.tabBarController?.navigationItem.rightBarButtonItem = nil
-        //self.tabBarController?.title = "Notifications"
       
-        // Do any additional setup after loading the view.
+      
+      
+      
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-  
+  override func viewDidAppear(_ animated: Bool) {
+    self.tabBarController?.title = "Notifications"
+    self.tabBarController?.navigationItem.rightBarButtonItem = nil
+  }
   
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
     return 5

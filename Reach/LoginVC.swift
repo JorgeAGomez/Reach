@@ -22,14 +22,16 @@ class LoginVC : UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     self.navigationItem.title = "Reach"
+    self.navigationController?.isNavigationBarHidden = true
     loginButton.layer.borderColor = reachColor
-    signUpButton.layer.borderColor = reachColor
+    self.hideKeyboardWhenTappedAround()
+    //signUpButton.layer.borderColor = reachColor
   
   }
 
-  override func didReceiveMemoryWarning() {
-    super.didReceiveMemoryWarning()
-    // Dispose of any resources that can be recreated.
+  override func viewDidAppear(_ animated: Bool) {
+      self.tabBarController?.title = "Login"
+      
   }
 
   @IBAction func loginTapped(_ sender: AnyObject) {
@@ -38,7 +40,12 @@ class LoginVC : UIViewController {
           self.performSegue(withIdentifier: "login", sender: self)
       }
       else{
-        print("THIS IS THE ERROR: \(error)")
+        let alertController = UIAlertController(title: "Try Again!", message: "The username or password is not correct", preferredStyle: UIAlertControllerStyle.alert)
+        let okAction = UIAlertAction(title: "Ok", style: UIAlertActionStyle.default) { (result : UIAlertAction) -> Void in
+            print("OK")
+        }
+        alertController.addAction(okAction)
+        self.present(alertController, animated: true, completion: nil)
       }
     }
   }

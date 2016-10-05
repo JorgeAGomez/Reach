@@ -15,6 +15,8 @@
 		D660EF6C1D8B904300DD2A84 /* ProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D660EF6B1D8B904300DD2A84 /* ProfileVC.swift */; };
 		D660EF6E1D8B9E4600DD2A84 /* NotificationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D660EF6D1D8B9E4600DD2A84 /* NotificationCell.swift */; };
 		D661C5DB1D8A04B000F9FFAC /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D661C5DA1D8A04B000F9FFAC /* HomeVC.swift */; };
+		D692AFCF1D90B1EF00501D70 /* SearchVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D692AFCE1D90B1EF00501D70 /* SearchVC.swift */; };
+		D692AFD21D90E0B700501D70 /* MessagesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D692AFD11D90E0B700501D70 /* MessagesVC.swift */; };
 		D6A5BDEA1D8A5F9D004F025D /* TabBarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6A5BDE91D8A5F9D004F025D /* TabBarVC.swift */; };
 		D6A5BDEC1D8A7293004F025D /* postJobFormVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6A5BDEB1D8A7293004F025D /* postJobFormVC.swift */; };
 		D6A76D861D8C9645006167EE /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D6A76D851D8C9645006167EE /* GoogleService-Info.plist */; };
@@ -37,6 +39,8 @@
 		D660EF6B1D8B904300DD2A84 /* ProfileVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileVC.swift; sourceTree = "<group>"; };
 		D660EF6D1D8B9E4600DD2A84 /* NotificationCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationCell.swift; sourceTree = "<group>"; };
 		D661C5DA1D8A04B000F9FFAC /* HomeVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
+		D692AFCE1D90B1EF00501D70 /* SearchVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchVC.swift; sourceTree = "<group>"; };
+		D692AFD11D90E0B700501D70 /* MessagesVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessagesVC.swift; sourceTree = "<group>"; };
 		D6A5BDE91D8A5F9D004F025D /* TabBarVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarVC.swift; sourceTree = "<group>"; };
 		D6A5BDEB1D8A7293004F025D /* postJobFormVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = postJobFormVC.swift; sourceTree = "<group>"; };
 		D6A76D851D8C9645006167EE /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -120,6 +124,22 @@
 			name = Main;
 			sourceTree = "<group>";
 		};
+		D692AFCD1D90B1DA00501D70 /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				D692AFCE1D90B1EF00501D70 /* SearchVC.swift */,
+			);
+			name = Search;
+			sourceTree = "<group>";
+		};
+		D692AFD01D90E0A000501D70 /* Messages */ = {
+			isa = PBXGroup;
+			children = (
+				D692AFD11D90E0B700501D70 /* MessagesVC.swift */,
+			);
+			name = Messages;
+			sourceTree = "<group>";
+		};
 		D6BA6E701D89B8E30063444C = {
 			isa = PBXGroup;
 			children = (
@@ -142,9 +162,11 @@
 			isa = PBXGroup;
 			children = (
 				D660EF721D8BA60B00DD2A84 /* Main */,
+				D692AFCD1D90B1DA00501D70 /* Search */,
 				D660EF711D8BA5F200DD2A84 /* Home */,
 				D660EF701D8BA5EB00DD2A84 /* Notifications */,
 				D660EF6F1D8BA5E600DD2A84 /* Profile */,
+				D692AFD01D90E0A000501D70 /* Messages */,
 				D60BB2821D8B29F800F31765 /* searchJobFormVC.swift */,
 				D6A5BDEB1D8A7293004F025D /* postJobFormVC.swift */,
 				D6A5BDE91D8A5F9D004F025D /* TabBarVC.swift */,
@@ -285,10 +307,12 @@
 				D661C5DB1D8A04B000F9FFAC /* HomeVC.swift in Sources */,
 				D660EF6E1D8B9E4600DD2A84 /* NotificationCell.swift in Sources */,
 				D60BB2851D8B2C4A00F31765 /* registrationVC.swift in Sources */,
+				D692AFD21D90E0B700501D70 /* MessagesVC.swift in Sources */,
 				D6A5BDEC1D8A7293004F025D /* postJobFormVC.swift in Sources */,
 				D60BB2871D8B2C8C00F31765 /* user.swift in Sources */,
 				D6A5BDEA1D8A5F9D004F025D /* TabBarVC.swift in Sources */,
 				D6BA6E7F1D89B8E30063444C /* LoginVC.swift in Sources */,
+				D692AFCF1D90B1EF00501D70 /* SearchVC.swift in Sources */,
 				D660EF6C1D8B904300DD2A84 /* ProfileVC.swift in Sources */,
 				D6BA6E7D1D89B8E30063444C /* AppDelegate.swift in Sources */,
 			);
