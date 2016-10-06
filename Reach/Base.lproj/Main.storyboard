@@ -190,6 +190,9 @@
                                 <frame key="frameInset" minX="137" minY="229" width="104" height="104"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="Facebook@100x"/>
+                                <connections>
+                                    <action selector="facebookButtonTapped:" destination="j3n-wF-GNq" eventType="touchUpInside" id="SXh-hU-FDb"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Select a sign in method" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="734-9t-eH8">
                                 <frame key="frameInset" minX="50" minY="155" width="275" height="53"/>
@@ -203,6 +206,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="rfb-ls-Jnd"/>
                     <connections>
+                        <outlet property="facebookButton" destination="rGr-dF-HuC" id="eYp-63-yTd"/>
                         <outlet property="loginButton" destination="HHW-hh-AbG" id="OW4-3L-2mP"/>
                         <outlet property="passwordTextField" destination="DMh-jt-u0V" id="UaY-yJ-XwR"/>
                         <outlet property="usernameTextField" destination="U8D-kc-Vgp" id="JhB-Bw-DUy"/>
@@ -337,13 +341,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <connections>
-                        <segue destination="j3n-wF-GNq" kind="show" identifier="userCreated" id="hTP-Lh-Rf7"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="k6H-0u-oKS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-836" y="916"/>
+            <point key="canvasLocation" x="-433" y="923"/>
         </scene>
         <!--Notifications-->
         <scene sceneID="aXs-I3-UC9">
@@ -361,7 +362,7 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" rowHeight="49" id="5fa-iE-6ZU" customClass="NotificationCell" customModule="Reach" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="49"/>
+                                        <rect key="frame" x="0.0" y="92" width="375" height="49"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="5fa-iE-6ZU" id="SRB-ld-Wmn">
                                             <frame key="frameInset" width="375" height="48.5"/>
@@ -487,7 +488,4 @@
         <image name="Me@1x" width="30" height="25"/>
         <image name="ReachIconImage" width="104" height="104"/>
     </resources>
-    <inferredMetricsTieBreakers>
-        <segue reference="hTP-Lh-Rf7"/>
-    </inferredMetricsTieBreakers>
 </document>
