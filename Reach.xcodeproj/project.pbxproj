@@ -52,6 +52,7 @@
 		D6BA6E861D89B8E30063444C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D6BA6E891D89B8E30063444C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D6BA6E8B1D89B8E30063444C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D6EB72021DA61DDB00A4CA7D /* Reach.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Reach.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -161,6 +162,7 @@
 		D6BA6E7B1D89B8E30063444C /* Reach */ = {
 			isa = PBXGroup;
 			children = (
+				D6EB72021DA61DDB00A4CA7D /* Reach.entitlements */,
 				D660EF721D8BA60B00DD2A84 /* Main */,
 				D692AFCD1D90B1DA00501D70 /* Search */,
 				D660EF711D8BA5F200DD2A84 /* Home */,
@@ -213,6 +215,11 @@
 						DevelopmentTeam = W5UDVEMQ22;
 						LastSwiftMigration = 0800;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Keychain = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -436,6 +443,7 @@
 			baseConfigurationReference = 3CB040188928AF959236B5ED /* Pods-Reach.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Reach/Reach.entitlements;
 				DEVELOPMENT_TEAM = W5UDVEMQ22;
 				INFOPLIST_FILE = Reach/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -450,6 +458,7 @@
 			baseConfigurationReference = 76DC64D5232821C8A1099E67 /* Pods-Reach.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Reach/Reach.entitlements;
 				DEVELOPMENT_TEAM = W5UDVEMQ22;
 				INFOPLIST_FILE = Reach/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

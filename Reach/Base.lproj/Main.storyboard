@@ -361,11 +361,11 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="49" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="G6f-Sn-EHu">
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" rowHeight="49" id="5fa-iE-6ZU" customClass="NotificationCell" customModule="Reach" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="92" width="375" height="49"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" rowHeight="49" id="5fa-iE-6ZU" customClass="NotificationCell" customModule="Reach" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="92" width="1000" height="49"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="5fa-iE-6ZU" id="SRB-ld-Wmn">
-                                            <frame key="frameInset" width="375" height="48.5"/>
+                                            <frame key="frameInset" width="1000" height="48.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Jorge2" translatesAutoresizingMaskIntoConstraints="NO" id="JYE-IY-JZc">
@@ -464,7 +464,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="48p-aU-zNP" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="ywy-SH-QAX">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="ywy-SH-QAX">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>

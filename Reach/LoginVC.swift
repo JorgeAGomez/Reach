@@ -47,9 +47,10 @@ class LoginVC : UIViewController {
           print("User cancelled facebook authentication")
         }
         else{
-          print("Facebook Authe Successfull")
+          print("Successfull authentication with Facebook",terminator:" ")
           let credential = FIRFacebookAuthProvider.credential(withAccessToken: FBSDKAccessToken.current().tokenString)
           self.firebaseAuth(credential)
+          self.performSegue(withIdentifier: "login", sender: self)
         }
     }
   }
@@ -61,25 +62,28 @@ class LoginVC : UIViewController {
       }
       else{
         print("Successfull authentication with Firebase")
+        
       }
     })
     
   }
   
   @IBAction func loginTapped(_ sender: AnyObject) {
-    FIRAuth.auth()?.signIn(withEmail: usernameTextField.text!, password: passwordTextField.text!) {(user, error )in
-      if(error == nil){
-          self.performSegue(withIdentifier: "login", sender: self)
-      }
-      else{
-        let alertController = UIAlertController(title: "Try Again!", message: "The username or password is not correct", preferredStyle: UIAlertControllerStyle.alert)
-        let okAction = UIAlertAction(title: "Ok", style: UIAlertActionStyle.default) { (result : UIAlertAction) -> Void in
-            print("OK")
+    if let useremail = usernameTextField.text, let pwd = passwordTextField.text {
+        FIRAuth.auth()?.signIn(withEmail: useremail, password: pwd) {(user, error )in
+          if(error == nil){
+              self.performSegue(withIdentifier: "login", sender: self)
+          }
+          else{
+            let alertController = UIAlertController(title: "Try Again!", message: "The username or password is not correct", preferredStyle: UIAlertControllerStyle.alert)
+            let okAction = UIAlertAction(title: "Ok", style: UIAlertActionStyle.default) { (result : UIAlertAction) -> Void in
+                print("OK")
+            }
+            alertController.addAction(okAction)
+            self.present(alertController, animated: true, completion: nil)
+          }
         }
-        alertController.addAction(okAction)
-        self.present(alertController, animated: true, completion: nil)
-      }
     }
-  }
+    }
 }
 
