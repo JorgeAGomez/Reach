@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="48p-aU-zNP">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="cfl-xc-sKG">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
@@ -98,7 +98,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Y9i-V1-xiJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2494" y="136"/>
+            <point key="canvasLocation" x="3432.8000000000002" y="135.38230884557723"/>
         </scene>
         <!--Post Job FormVC-->
         <scene sceneID="Vfg-bf-hHq">
@@ -116,7 +116,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hbK-4h-PK7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3300" y="160"/>
+            <point key="canvasLocation" x="4239.1999999999998" y="159.67016491754123"/>
         </scene>
         <!--LoginVC-->
         <scene sceneID="9jx-UV-VHM">
@@ -215,7 +215,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8rI-yy-1ix" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-4" y="136.28185907046478"/>
+            <point key="canvasLocation" x="935.20000000000005" y="136.28185907046478"/>
         </scene>
         <!--Profile-->
         <scene sceneID="7gM-56-11v">
@@ -326,7 +326,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nkL-ov-e8L" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="783" y="136"/>
+            <point key="canvasLocation" x="1720.8" y="135.38230884557723"/>
         </scene>
         <!--RegistrationVC-->
         <scene sceneID="hQa-0s-sHc">
@@ -339,12 +339,114 @@
                     <view key="view" contentMode="scaleToFill" id="cjJ-9A-qoI">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q3G-pM-U9D">
+                                <frame key="frameInset" minX="134" minY="134" width="107" height="107"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button" image="Facebook@100x"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="layer.shadowColor">
+                                        <color key="value" red="0.46416266025641029" green="0.46416266025641029" blue="0.46416266025641029" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.shadowRadius">
+                                        <integer key="value" value="12"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.shadowOpacity">
+                                        <real key="value" value="0.80000000000000004"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email" textAlignment="natural" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="Fjw-Ol-bsq" customClass="HoshiTextField" customModule="TextFieldEffects">
+                                <frame key="frameInset" minX="16" minY="306" width="343" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderInactiveColor">
+                                        <color key="value" red="0.83529411760000005" green="0.34901960780000002" blue="0.29411764709999999" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="placeholderFontScale">
+                                        <real key="value" value="1.1000000000000001"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="First name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="oh3-XF-FaN" customClass="HoshiTextField" customModule="TextFieldEffects">
+                                <frame key="frameInset" minX="16" minY="370" width="343" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderInactiveColor">
+                                        <color key="value" red="0.83529411760000005" green="0.34901960780000002" blue="0.29411764709999999" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="placeholderFontScale">
+                                        <real key="value" value="1.1000000000000001"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Last name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="52g-sv-Zg3" customClass="HoshiTextField" customModule="TextFieldEffects">
+                                <frame key="frameInset" minX="16" minY="430" width="343" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderInactiveColor">
+                                        <color key="value" red="0.83529411760000005" green="0.34901960780000002" blue="0.29411764709999999" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="placeholderFontScale">
+                                        <real key="value" value="1.1000000000000001"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="natural" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hRT-LU-e4q" customClass="HoshiTextField" customModule="TextFieldEffects">
+                                <frame key="frameInset" minX="16" minY="492" width="343" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderInactiveColor">
+                                        <color key="value" red="0.83529411760000005" green="0.34901960780000002" blue="0.29411764709999999" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="placeholderFontScale">
+                                        <real key="value" value="1.1000000000000001"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a98-4c-ifR">
+                                <frame key="frameInset" minX="16" minY="580" width="343" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Sign up with email">
+                                    <color key="titleColor" red="0.83529411760000005" green="0.34901960780000002" blue="0.29411764709999999" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
+                                        <integer key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="signUpTapped:" destination="737-UP-XQV" eventType="touchUpInside" id="QHR-ap-a9b"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <outlet property="FirstNameTextField" destination="oh3-XF-FaN" id="Lid-2M-rbk"/>
+                        <outlet property="emailTextField" destination="Fjw-Ol-bsq" id="8JC-p7-iX1"/>
+                        <outlet property="lastNameTextField" destination="52g-sv-Zg3" id="0Wb-ZC-Dok"/>
+                        <outlet property="passwordTextField" destination="hRT-LU-e4q" id="4aF-Wl-tIw"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="k6H-0u-oKS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-433" y="923"/>
+            <point key="canvasLocation" x="-671.20000000000005" y="915.29235382308855"/>
         </scene>
         <!--Notifications-->
         <scene sceneID="aXs-I3-UC9">
@@ -361,11 +463,11 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="49" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="G6f-Sn-EHu">
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" rowHeight="49" id="5fa-iE-6ZU" customClass="NotificationCell" customModule="Reach" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="92" width="1000" height="49"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" rowHeight="49" id="5fa-iE-6ZU" customClass="NotificationCell" customModule="Reach" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="92" width="375" height="49"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="5fa-iE-6ZU" id="SRB-ld-Wmn">
-                                            <frame key="frameInset" width="1000" height="48.5"/>
+                                            <frame key="frameInset" width="375" height="48.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Jorge2" translatesAutoresizingMaskIntoConstraints="NO" id="JYE-IY-JZc">
@@ -459,23 +561,107 @@
             </objects>
             <point key="canvasLocation" x="1898" y="916"/>
         </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="ar7-26-WkO">
+        <!--WelcomeVC-->
+        <scene sceneID="upk-wz-XwR">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="48p-aU-zNP" sceneMemberID="viewController">
+                <viewController id="ebs-Og-Vxd" customClass="WelcomeVC" customModule="Reach" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="n86-2R-dbC"/>
+                        <viewControllerLayoutGuide type="bottom" id="8FV-sF-m7F"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="41m-oD-tdi">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ReachIconImage" translatesAutoresizingMaskIntoConstraints="NO" id="jPC-1y-yJx">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="164" id="W4L-sd-NR0"/>
+                                    <constraint firstAttribute="height" constant="87" id="tnZ-r0-9Oa"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Reach" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gYZ-pc-Xjo">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="79" id="IH1-qX-PmF"/>
+                                    <constraint firstAttribute="width" constant="276" id="eae-wi-lOl"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="36"/>
+                                <color key="textColor" red="0.83137254900000002" green="0.3294117647" blue="0.27058823529999998" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WdU-wF-vzt">
+                                <frame key="frameInset" minX="63" minY="473" width="250" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="250" id="EUN-YO-y1I"/>
+                                    <constraint firstAttribute="height" constant="30" id="hol-w7-Wq7"/>
+                                </constraints>
+                                <state key="normal" title="Sign up"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
+                                        <integer key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <segue destination="737-UP-XQV" kind="show" id="Fdw-MU-ppb"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gTi-7Z-5jT">
+                                <frame key="frameInset" minX="63" minY="549" width="250" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="250" id="GuL-6e-myn"/>
+                                    <constraint firstAttribute="height" constant="30" id="aPC-SS-4QZ"/>
+                                </constraints>
+                                <state key="normal" title="Log in"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
+                                        <integer key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <segue destination="j3n-wF-GNq" kind="show" id="zXO-p6-Cqz"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="jPC-1y-yJx" firstAttribute="centerX" secondItem="41m-oD-tdi" secondAttribute="centerX" id="7b5-1N-Rs0"/>
+                            <constraint firstItem="gTi-7Z-5jT" firstAttribute="top" secondItem="WdU-wF-vzt" secondAttribute="bottom" constant="46" id="C5M-c2-nXX"/>
+                            <constraint firstItem="gTi-7Z-5jT" firstAttribute="centerX" secondItem="WdU-wF-vzt" secondAttribute="centerX" id="DP5-ya-FyA"/>
+                            <constraint firstItem="jPC-1y-yJx" firstAttribute="top" secondItem="n86-2R-dbC" secondAttribute="bottom" constant="81" id="F2h-WR-oNH"/>
+                            <constraint firstItem="gYZ-pc-Xjo" firstAttribute="centerX" secondItem="jPC-1y-yJx" secondAttribute="centerX" id="Icx-3U-2uu"/>
+                            <constraint firstItem="WdU-wF-vzt" firstAttribute="centerX" secondItem="gYZ-pc-Xjo" secondAttribute="centerX" id="UwT-dZ-fXp"/>
+                            <constraint firstItem="WdU-wF-vzt" firstAttribute="top" secondItem="gYZ-pc-Xjo" secondAttribute="bottom" constant="137" id="aqK-rN-pi8"/>
+                            <constraint firstItem="gYZ-pc-Xjo" firstAttribute="top" secondItem="jPC-1y-yJx" secondAttribute="bottom" constant="25" id="yAc-CX-kJl"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="TBb-C8-Cpu"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="w9h-Db-Ote" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="84" y="135.38230884557723"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="b0j-PM-AHK">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="cfl-xc-sKG" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="ywy-SH-QAX">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="7rS-vG-ENN">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="j3n-wF-GNq" kind="relationship" relationship="rootViewController" id="LR6-vd-quX"/>
+                        <segue destination="ebs-Og-Vxd" kind="relationship" relationship="rootViewController" id="NRu-ac-v4Q"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="rHS-tx-rix" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SKu-zi-jLj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-943.20000000000005" y="136.28185907046478"/>
+            <point key="canvasLocation" x="-855.20000000000005" y="135.38230884557723"/>
         </scene>
     </scenes>
     <resources>

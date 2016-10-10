@@ -9,5 +9,6 @@ target 'Reach' do
   pod 'FirebaseAuth', '~> 3.0'
   pod 'IQKeyboardManagerSwift', '~> 4.0'
   pod 'FBSDKLoginKit'
+  pod 'TextFieldEffects', '~> 1.3'
 
 end

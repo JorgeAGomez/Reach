@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		8A0574AEC545344D570FF799 /* Pods_Reach.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09FE022D40B7149CEEF92633 /* Pods_Reach.framework */; };
+		D60ACFC51DAB4E1F000AEF04 /* WelcomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D60ACFC41DAB4E1F000AEF04 /* WelcomeVC.swift */; };
+		D60ACFC81DAB76EA000AEF04 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D60ACFC71DAB76EA000AEF04 /* Login.storyboard */; };
 		D60BB2831D8B29F800F31765 /* searchJobFormVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D60BB2821D8B29F800F31765 /* searchJobFormVC.swift */; };
 		D60BB2851D8B2C4A00F31765 /* registrationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D60BB2841D8B2C4A00F31765 /* registrationVC.swift */; };
 		D60BB2871D8B2C8C00F31765 /* user.swift in Sources */ = {isa = PBXBuildFile; fileRef = D60BB2861D8B2C8C00F31765 /* user.swift */; };
@@ -32,6 +34,8 @@
 		09FE022D40B7149CEEF92633 /* Pods_Reach.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Reach.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3CB040188928AF959236B5ED /* Pods-Reach.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Reach.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Reach/Pods-Reach.debug.xcconfig"; sourceTree = "<group>"; };
 		76DC64D5232821C8A1099E67 /* Pods-Reach.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Reach.release.xcconfig"; path = "Pods/Target Support Files/Pods-Reach/Pods-Reach.release.xcconfig"; sourceTree = "<group>"; };
+		D60ACFC41DAB4E1F000AEF04 /* WelcomeVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeVC.swift; sourceTree = "<group>"; };
+		D60ACFC71DAB76EA000AEF04 /* Login.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		D60BB2821D8B29F800F31765 /* searchJobFormVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = searchJobFormVC.swift; sourceTree = "<group>"; };
 		D60BB2841D8B2C4A00F31765 /* registrationVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = registrationVC.swift; sourceTree = "<group>"; };
 		D60BB2861D8B2C8C00F31765 /* user.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = user.swift; sourceTree = "<group>"; };
@@ -84,11 +88,26 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
-		D660EF6F1D8BA5E600DD2A84 /* Profile */ = {
+		D60ACFC11DA99875000AEF04 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Helper;
+			sourceTree = "<group>";
+		};
+		D60ACFC61DAB76BC000AEF04 /* Login */ = {
 			isa = PBXGroup;
 			children = (
 				D6BA6E7E1D89B8E30063444C /* LoginVC.swift */,
 				D60BB2841D8B2C4A00F31765 /* registrationVC.swift */,
+				D60ACFC71DAB76EA000AEF04 /* Login.storyboard */,
+			);
+			name = Login;
+			sourceTree = "<group>";
+		};
+		D660EF6F1D8BA5E600DD2A84 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
 				D660EF6B1D8B904300DD2A84 /* ProfileVC.swift */,
 			);
 			name = Profile;
@@ -121,6 +140,7 @@
 				D6BA6E8B1D89B8E30063444C /* Info.plist */,
 				D6A76D851D8C9645006167EE /* GoogleService-Info.plist */,
 				D6BA6E831D89B8E30063444C /* Reach.xcdatamodeld */,
+				D60ACFC41DAB4E1F000AEF04 /* WelcomeVC.swift */,
 			);
 			name = Main;
 			sourceTree = "<group>";
@@ -162,6 +182,8 @@
 		D6BA6E7B1D89B8E30063444C /* Reach */ = {
 			isa = PBXGroup;
 			children = (
+				D60ACFC11DA99875000AEF04 /* Helper */,
+				D60ACFC61DAB76BC000AEF04 /* Login */,
 				D6EB72021DA61DDB00A4CA7D /* Reach.entitlements */,
 				D660EF721D8BA60B00DD2A84 /* Main */,
 				D692AFCD1D90B1DA00501D70 /* Search */,
@@ -249,6 +271,7 @@
 				D6BA6E8A1D89B8E30063444C /* LaunchScreen.storyboard in Resources */,
 				D6A76D861D8C9645006167EE /* GoogleService-Info.plist in Resources */,
 				D6BA6E871D89B8E30063444C /* Assets.xcassets in Resources */,
+				D60ACFC81DAB76EA000AEF04 /* Login.storyboard in Resources */,
 				D6BA6E821D89B8E30063444C /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -314,6 +337,7 @@
 				D661C5DB1D8A04B000F9FFAC /* HomeVC.swift in Sources */,
 				D660EF6E1D8B9E4600DD2A84 /* NotificationCell.swift in Sources */,
 				D60BB2851D8B2C4A00F31765 /* registrationVC.swift in Sources */,
+				D60ACFC51DAB4E1F000AEF04 /* WelcomeVC.swift in Sources */,
 				D692AFD21D90E0B700501D70 /* MessagesVC.swift in Sources */,
 				D6A5BDEC1D8A7293004F025D /* postJobFormVC.swift in Sources */,
 				D60BB2871D8B2C8C00F31765 /* user.swift in Sources */,

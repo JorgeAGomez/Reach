@@ -23,7 +23,7 @@ class LoginVC : UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     self.navigationItem.title = "Reach"
-    self.navigationController?.isNavigationBarHidden = true
+    //self.navigationController?.isNavigationBarHidden = true
     loginButton.layer.borderColor = reachColor
     self.hideKeyboardWhenTappedAround()
     
@@ -34,11 +34,13 @@ class LoginVC : UIViewController {
       self.tabBarController?.title = "Login"
       
   }
+  //Create user or sign in using Facebook SDK. 
+  
   @IBAction func facebookButtonTapped(_ sender: AnyObject) {
    
        let facebookLogin = FBSDKLoginManager()
     
-       facebookLogin.logIn(withReadPermissions: ["email"], from: self) { (result, error) in
+       facebookLogin.logIn(withReadPermissions: ["email","public_profile"], from: self) { (result, error) in
         if error != nil
         {
           print("Unable to authenticate with facebok!")
@@ -49,6 +51,7 @@ class LoginVC : UIViewController {
         else{
           print("Successfull authentication with Facebook",terminator:" ")
           let credential = FIRFacebookAuthProvider.credential(withAccessToken: FBSDKAccessToken.current().tokenString)
+          
           self.firebaseAuth(credential)
           self.performSegue(withIdentifier: "login", sender: self)
         }
@@ -68,22 +71,33 @@ class LoginVC : UIViewController {
     
   }
   
+  let providers = [String]()
+  
   @IBAction func loginTapped(_ sender: AnyObject) {
     if let useremail = usernameTextField.text, let pwd = passwordTextField.text {
         FIRAuth.auth()?.signIn(withEmail: useremail, password: pwd) {(user, error )in
           if(error == nil){
               self.performSegue(withIdentifier: "login", sender: self)
+              print("JORGE: \(error)")
           }
           else{
-            let alertController = UIAlertController(title: "Try Again!", message: "The username or password is not correct", preferredStyle: UIAlertControllerStyle.alert)
-            let okAction = UIAlertAction(title: "Ok", style: UIAlertActionStyle.default) { (result : UIAlertAction) -> Void in
-                print("OK")
-            }
-            alertController.addAction(okAction)
-            self.present(alertController, animated: true, completion: nil)
-          }
+              let alertController = UIAlertController(title: "Sorry", message: "\(error)", preferredStyle: .alert)
+              let OKAction = UIAlertAction(title: "OK", style: .default) { (action) in
+              // ...
+              }
+              alertController.addAction(OKAction)
+              self.present(alertController, animated: true)
         }
+      }
     }
+    else{
+        let alertController = UIAlertController(title: "Sorry", message: "Text field cannot be emtpy", preferredStyle: .alert)
+        let OKAction = UIAlertAction(title: "OK", style: .default) { (action) in
+            // ...
+        }
+        alertController.addAction(OKAction)
+        self.present(alertController, animated: true)
     }
+  }
 }
 
