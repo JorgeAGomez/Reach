@@ -13,10 +13,10 @@ import TextFieldEffects
 class registrationVC: UIViewController {
 
 
-  @IBOutlet weak var emailTextField: HoshiTextField!
-  @IBOutlet weak var FirstNameTextField: HoshiTextField!
-  @IBOutlet weak var lastNameTextField: HoshiTextField!
-  @IBOutlet weak var passwordTextField: HoshiTextField!
+  @IBOutlet weak var emailTextField: YoshikoTextField!
+  @IBOutlet weak var FirstNameTextField: YoshikoTextField!
+  @IBOutlet weak var lastNameTextField: YoshikoTextField!
+  @IBOutlet weak var passwordTextField: YoshikoTextField!
   
     override func viewDidLoad() {
         super.viewDidLoad()
