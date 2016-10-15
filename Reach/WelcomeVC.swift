@@ -10,26 +10,28 @@ import UIKit
 
 class WelcomeVC: UIViewController {
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
+  @IBOutlet weak var signUpButton: UIButton!
+  
+  @IBOutlet weak var logInButton: UIButton!
+  
+  let reachColor = UIColor(displayP3Red: 211/251, green: 81/251, blue: 67/251, alpha: 1.0).cgColor
+  override func viewDidLoad() {
+      super.viewDidLoad()
+      signUpButton.layer.borderColor = reachColor
+      logInButton.layer.borderColor = reachColor
+      signUpButton.layer.backgroundColor = reachColor
+      logInButton.layer.backgroundColor = reachColor
 
-        // Do any additional setup after loading the view.
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
+  }
     
+  @IBAction func signUpTapped(_ sender: AnyObject) {
+    let registrationViewC = SignUpVC.storyboardInstance()
+    navigationController?.pushViewController(registrationViewC!, animated: true)
+  }
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
+  @IBAction func logInTapped(_ sender: AnyObject) {
+    let loginViewC = LoginVC.storyboardInstance()
+    navigationController?.pushViewController(loginViewC!, animated: true)
+  }
 
 }

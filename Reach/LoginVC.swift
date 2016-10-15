@@ -15,18 +15,25 @@ class LoginVC : UIViewController {
 
   @IBOutlet weak var facebookButton: UIButton!
   
+  @IBOutlet weak var googleButton: UIButton!
+  
   @IBOutlet weak var passwordTextField: UITextField!
+  
   @IBOutlet weak var usernameTextField: UITextField!
+  
   @IBOutlet weak var loginButton: UIButton!
+  
   let reachColor = UIColor(displayP3Red: 211/251, green: 81/251, blue: 67/251, alpha: 1.0).cgColor
   
   override func viewDidLoad() {
     super.viewDidLoad()
     self.navigationItem.title = "Reach"
     //self.navigationController?.isNavigationBarHidden = true
+    //self.navigationController?.view.backgroundColor = UIColor.clear
     loginButton.layer.borderColor = reachColor
+    loginButton.layer.borderWidth = 1
+    loginButton.layer.cornerRadius = 10
     self.hideKeyboardWhenTappedAround()
-    
   
   }
 
@@ -34,6 +41,12 @@ class LoginVC : UIViewController {
       self.tabBarController?.title = "Login"
       
   }
+  
+  static func storyboardInstance() -> LoginVC? {
+    let storyboard = UIStoryboard(name: String(describing: self), bundle: nil)
+    return storyboard.instantiateInitialViewController() as? LoginVC
+  }
+  
   //Create user or sign in using Facebook SDK. 
   
   @IBAction func facebookButtonTapped(_ sender: AnyObject) {
