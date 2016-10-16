@@ -34,6 +34,7 @@ class LoginVC : UIViewController {
     loginButton.layer.borderWidth = 1
     loginButton.layer.cornerRadius = 10
     self.hideKeyboardWhenTappedAround()
+    
   
   }
 
@@ -66,7 +67,8 @@ class LoginVC : UIViewController {
           let credential = FIRFacebookAuthProvider.credential(withAccessToken: FBSDKAccessToken.current().tokenString)
           
           self.firebaseAuth(credential)
-          self.performSegue(withIdentifier: "login", sender: self)
+          let tabBarViewC = TabBarVC.storyboardInstance()
+          self.navigationController?.pushViewController(tabBarViewC!, animated: true)
         }
     }
   }

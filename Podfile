@@ -1,5 +1,5 @@
 # Uncomment this line to define a global platform for your project
-# platform :ios, '9.0'
+platform :ios, '10.0'
 
 target 'Reach' do
   
@@ -10,5 +10,6 @@ target 'Reach' do
   pod 'IQKeyboardManagerSwift', '~> 4.0'
   pod 'FBSDKLoginKit'
   pod 'TextFieldEffects', '~> 1.3'
+  ##
 
 end

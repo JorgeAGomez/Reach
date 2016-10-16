@@ -9,16 +9,27 @@
 import UIKit
 import FirebaseAuth
 
-class ProfileVC: UIViewController {
+class ProfileVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
   @IBOutlet weak var profilePicture: UIImageView!
   @IBOutlet weak var userName: UILabel!
   @IBOutlet weak var professionName: UILabel!
+  @IBOutlet weak var segmentedControl: UISegmentedControl!
+  @IBOutlet weak var tableView: UITableView!
+  
+  public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    return 0
+  }
+  
+  public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+  
+      return UITableViewCell()
+  }
+  
   
     override func viewDidLoad() {
         super.viewDidLoad()
         self.hideKeyboardWhenTappedAround()
-      
       
         //Modifies the radius of the square to make the profile picture a circle.
         profilePicture.layer.cornerRadius = 75
@@ -45,7 +56,7 @@ class ProfileVC: UIViewController {
 
 }
 
-extension UIViewController {
+  extension UIViewController {
     func hideKeyboardWhenTappedAround() {
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(UIViewController.dismissKeyboard))
         view.addGestureRecognizer(tap)
@@ -54,4 +65,7 @@ extension UIViewController {
     func dismissKeyboard() {
         view.endEditing(true)
     }
+    
+    
+    
 }

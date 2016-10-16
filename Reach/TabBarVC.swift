@@ -17,11 +17,10 @@ class TabBarVC: UITabBarController {
         // Do any additional setup after loading the view.
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
+  static func storyboardInstance() -> TabBarVC? {
+    let storyboard = UIStoryboard(name: String(describing: self), bundle: nil)
+    return storyboard.instantiateInitialViewController() as? TabBarVC
+  }
 
 
 
