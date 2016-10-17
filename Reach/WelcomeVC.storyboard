@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="g6d-U9-MNU">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--WelcomeVC-->
+        <scene sceneID="Wzv-JK-37V">
+            <objects>
+                <viewController id="lHn-pg-sci" customClass="WelcomeVC" customModule="Reach" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="84F-6f-fvQ"/>
+                        <viewControllerLayoutGuide type="bottom" id="GFb-Az-qzg"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="fMa-vs-H7H">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Reach" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TzI-F3-RTz">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="276" id="SPf-Em-V59"/>
+                                    <constraint firstAttribute="height" constant="79" id="zw2-ao-Y1Y"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="36"/>
+                                <color key="textColor" red="0.83137254900000002" green="0.3294117647" blue="0.27058823529999998" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ReachIconImage" translatesAutoresizingMaskIntoConstraints="NO" id="PKz-6K-iIo">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="87" id="JSX-DQ-ufc"/>
+                                    <constraint firstAttribute="width" constant="164" id="ltL-6y-fvK"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vIg-Ag-eUZ">
+                                <frame key="frameInset" minX="62" minY="532" width="250" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.83529411760000005" green="0.34901960780000002" blue="0.29411764709999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Sign in">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="logInTapped:" destination="lHn-pg-sci" eventType="touchUpInside" id="wAs-YW-spG"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pLk-6L-fx6">
+                                <frame key="frameInset" minX="62" minY="433" width="250" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.83529411760000005" green="0.34901960780000002" blue="0.29411764709999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Sign up">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="signUpTapped:" destination="lHn-pg-sci" eventType="touchUpInside" id="qUk-NE-ajF"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="PKz-6K-iIo" firstAttribute="centerX" secondItem="fMa-vs-H7H" secondAttribute="centerX" id="4ol-8v-edo"/>
+                            <constraint firstItem="TzI-F3-RTz" firstAttribute="centerX" secondItem="PKz-6K-iIo" secondAttribute="centerX" id="E06-h0-ySr"/>
+                            <constraint firstItem="PKz-6K-iIo" firstAttribute="top" secondItem="84F-6f-fvQ" secondAttribute="bottom" constant="79" id="MOy-TX-Pj5"/>
+                            <constraint firstItem="TzI-F3-RTz" firstAttribute="top" secondItem="PKz-6K-iIo" secondAttribute="bottom" constant="14" id="lP2-6r-sca"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="am5-hd-6gu"/>
+                    <connections>
+                        <outlet property="logInButton" destination="vIg-Ag-eUZ" id="hZC-I4-GNa"/>
+                        <outlet property="signUpButton" destination="pLk-6L-fx6" id="WPC-dW-EAz"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="MpI-v7-0xw" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2095.1999999999998" y="-135.38230884557723"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="iDS-l7-6jE">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="g6d-U9-MNU" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Izj-cD-MjU">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="lHn-pg-sci" kind="relationship" relationship="rootViewController" id="O6T-a5-YbZ"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VnW-l1-MKd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1156" y="-135.38230884557723"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="ReachIconImage" width="104" height="104"/>
+    </resources>
+</document>

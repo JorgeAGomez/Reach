@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import FBSDKLoginKit
+import FirebaseAuth
 
 class WelcomeVC: UIViewController {
 
@@ -19,9 +21,12 @@ class WelcomeVC: UIViewController {
       super.viewDidLoad()
       signUpButton.layer.borderColor = reachColor
       logInButton.layer.borderColor = reachColor
-      signUpButton.layer.backgroundColor = reachColor
-      logInButton.layer.backgroundColor = reachColor
-
+      if let user_token = FBSDKAccessToken.current() {
+            let credential = FIRFacebookAuthProvider.credential(withAccessToken: user_token.tokenString)
+            self.firebaseAuth(credential)
+            let tabBarViewC = TabBarVC.storyboardInstance()
+            self.navigationController?.pushViewController(tabBarViewC!, animated: true)
+      }
   }
     
   @IBAction func signUpTapped(_ sender: AnyObject) {
@@ -32,6 +37,23 @@ class WelcomeVC: UIViewController {
   @IBAction func logInTapped(_ sender: AnyObject) {
     let loginViewC = LoginVC.storyboardInstance()
     navigationController?.pushViewController(loginViewC!, animated: true)
+  }
+  
+    func firebaseAuth(_ credential : FIRAuthCredential){
+    FIRAuth.auth()?.signIn(with: credential, completion: { (user, error) in
+      if error != nil{
+        print("Unable to authenticate with Firebase")
+      }
+      else{
+        print("Successfull authentication with Firebase")
+        
+      }
+    })
+  }
+  
+  static func storyboardInstance() -> WelcomeVC? {
+    let storyboard = UIStoryboard(name: "WelcomeVC", bundle: nil)
+    return storyboard.instantiateInitialViewController() as? WelcomeVC
   }
 
 }

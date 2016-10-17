@@ -28,8 +28,7 @@ class LoginVC : UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     self.navigationItem.title = "Reach"
-    //self.navigationController?.isNavigationBarHidden = true
-    //self.navigationController?.view.backgroundColor = UIColor.clear
+    
     loginButton.layer.borderColor = reachColor
     loginButton.layer.borderWidth = 1
     loginButton.layer.cornerRadius = 10

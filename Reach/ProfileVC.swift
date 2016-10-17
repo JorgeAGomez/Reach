@@ -8,6 +8,7 @@
 
 import UIKit
 import FirebaseAuth
+import FBSDKLoginKit
 
 class ProfileVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
@@ -27,13 +28,13 @@ class ProfileVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
   }
   
   
-    override func viewDidLoad() {
+  override func viewDidLoad() {
         super.viewDidLoad()
         self.hideKeyboardWhenTappedAround()
       
         //Modifies the radius of the square to make the profile picture a circle.
         profilePicture.layer.cornerRadius = 75
-        profilePicture.layer.borderWidth = 3
+        profilePicture.layer.borderWidth = 1.5
         profilePicture.layer.borderColor = UIColor(displayP3Red: 211/251, green: 81/251, blue: 66/251, alpha: 1.0).cgColor
         profilePicture.clipsToBounds = true
     }
@@ -48,10 +49,17 @@ class ProfileVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
       self.tabBarController?.navigationItem.rightBarButtonItem = rightButton
     }
   
+    override func viewWillDisappear(_ animated: Bool) {
+      self.tabBarController?.navigationItem.rightBarButtonItem = nil
+    }
+  
     func logoutButton(){
         try! FIRAuth.auth()!.signOut()
-        let loginViewController = self.storyboard!.instantiateViewController(withIdentifier: "loginScreen")
-        UIApplication.shared.keyWindow?.rootViewController = loginViewController
+        let loginManager = FBSDKLoginManager()
+        loginManager.logOut()
+        let login = LoginVC.storyboardInstance()
+        
+        self.navigationController?.show(login!, sender: self)
     }
 
 }
