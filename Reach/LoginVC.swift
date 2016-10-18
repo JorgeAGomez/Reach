@@ -14,13 +14,9 @@ import FBSDKLoginKit
 class LoginVC : UIViewController {
 
   @IBOutlet weak var facebookButton: UIButton!
-  
   @IBOutlet weak var googleButton: UIButton!
-  
   @IBOutlet weak var passwordTextField: UITextField!
-  
   @IBOutlet weak var usernameTextField: UITextField!
-  
   @IBOutlet weak var loginButton: UIButton!
   
   let reachColor = UIColor(displayP3Red: 211/251, green: 81/251, blue: 67/251, alpha: 1.0).cgColor
@@ -28,7 +24,7 @@ class LoginVC : UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     self.navigationItem.title = "Reach"
-    
+    //self.navigationItem.setHidesBackButton(true, animated: true)
     loginButton.layer.borderColor = reachColor
     loginButton.layer.borderWidth = 1
     loginButton.layer.cornerRadius = 10

@@ -57,9 +57,9 @@ class ProfileVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
         try! FIRAuth.auth()!.signOut()
         let loginManager = FBSDKLoginManager()
         loginManager.logOut()
-        let login = LoginVC.storyboardInstance()
-        
-        self.navigationController?.show(login!, sender: self)
+        let storyboard = UIStoryboard(name: "WelcomeVC", bundle: nil)
+        let loginViewController = storyboard.instantiateViewController(withIdentifier: "WelcomeVC")
+        self.present(loginViewController, animated: false, completion: nil)
     }
 
 }

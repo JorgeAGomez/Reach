@@ -9,7 +9,7 @@
         <!--LoginVC-->
         <scene sceneID="D3r-sY-o2Z">
             <objects>
-                <viewController id="Kaw-wy-2nM" customClass="LoginVC" customModule="Reach" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="loginVC" id="Kaw-wy-2nM" customClass="LoginVC" customModule="Reach" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="apx-CZ-cww"/>
                         <viewControllerLayoutGuide type="bottom" id="MvK-EN-rYb"/>
